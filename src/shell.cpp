@@ -52,6 +52,9 @@ int main()
             for(; token2 != NULL; y++)
             {
                 string stringtoken2 = token2;
+                if(stringtoken2 == "exit" || stringtoken2 == "Exit"){
+                    return 0;
+                }
                 argv[y] = new char[stringtoken2.size()];
                 argv[y] = token2;
                 token2 = strtok(NULL, " ");
@@ -61,13 +64,22 @@ int main()
             argv[y] = NULL;
 
             int pid = fork();
+            if(pid == -1){
+                perror("fork");
+                exit(1);
+            }
             if(pid == 0)
             {
-                execvp(argv[0], argv);
+                int execvperror = execvp(argv[0], argv);
+                if(execvperror == -1){
+                    perror("execvp");
+                    exit(1);
+                }
             }
             else
             {
-                if( -1 == wait(NULL))
+                int waiterror = wait(NULL);
+                if(waiterror == -1)
                 {
                     perror("wait");
                     exit(1);
