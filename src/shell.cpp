@@ -12,9 +12,9 @@ using namespace std;
 
 int main()
 {
-    bool execute = true;
+    bool run= true;
 
-    while(execute)
+    while(run)
     {
 
         //extra credit part
@@ -49,15 +49,23 @@ int main()
             argv = (char**) malloc (400);
             char* token2 = strtok(commandvector.at(x), " ");
             int y = 0;
-            for(; token2 != NULL; y++)
+            bool iscomment = false;
+            for(; (token2 != NULL) && (!iscomment); y++)
             {
                 string stringtoken2 = token2;
-                if(stringtoken2 == "exit" || stringtoken2 == "Exit"){
+                if(stringtoken2 == "exit"){
                     return 0;
                 }
-                argv[y] = new char[stringtoken2.size()];
-                argv[y] = token2;
-                token2 = strtok(NULL, " ");
+                if(stringtoken2.at(0) == '#'){
+                    iscomment = true;
+                    token2 = NULL;
+                    commandvector.clear();
+                }
+                if(!iscomment){
+                    argv[y] = new char[stringtoken2.size()];
+                    argv[y] = token2;
+                    token2 = strtok(NULL, " ");
+                }
             }
             
             argv[y] = new char[5];
