@@ -6,4 +6,4 @@ bin:
 	mkdir bin;
 
 rshell:
-	src/rshell.cpp -Wall -Werror -ansi -pedantic -o bin/rshell
+	g++ src/shell.cpp -Wall -Werror -ansi -pedantic -o bin/rshell
