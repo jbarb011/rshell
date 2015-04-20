@@ -21,7 +21,11 @@ int main()
         char* username;
         char hostname[128];
         username = getlogin();
-        gethostname(hostname, 128);
+        int errorhost = gethostname(hostname, 128);
+        if(errorhost == -1){
+            perror("gethostname");
+            exit(1);
+        }
         cerr << username << "@" << hostname << "$ ";
         
         //get command
