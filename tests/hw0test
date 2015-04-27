@@ -1,0 +1,109 @@
+Script started on Sun 19 Apr 2015 08:19:21 PM PDT
+~
+jbarb011@hammer $ make
+make: *** No targets specified and no makefile found.  Stop.
+~
+jbarb011@hammer $ cd CS100
+~/CS100
+jbarb011@hammer $ cd rshell
+~/CS100/rshell
+jbarb011@hammer $ make
+make bin;
+make[1]: Entering directory `/home/csmajs/jbarb011/CS100/rshell'
+make[1]: `bin' is up to date.
+make[1]: Leaving directory `/home/csmajs/jbarb011/CS100/rshell'
+make rshell;
+make[1]: Entering directory `/home/csmajs/jbarb011/CS100/rshell'
+g++ src/shell.cpp -Wall -Werror -ansi -pedantic -o bin/rshell
+make[1]: Leaving directory `/home/csmajs/jbarb011/CS100/rshell'
+~/CS100/rshell
+jbarb011@hammer $ bin/rshell
+jbarb011@hammer.cs.ucr.edu$ echo "First test executi         t: executing commands"
+"First test: executing commands"
+jbarb011@hammer.cs.ucr.edu$ ls
+bin  LICENSE  Makefile	README.md  src	tests
+jbarb011@hammer.cs.ucr.edu$ ls -l
+total 20
+drwx------ 2 jbarb011 csmajs 4096 Apr 19 20:14 bin
+-rw------- 1 jbarb011 csmajs 1082 Apr 12 22:35 LICENSE
+-rw------- 1 jbarb011 csmajs  120 Apr 19 20:05 Makefile
+-rw------- 1 jbarb011 csmajs   25 Apr 12 22:35 README.md
+drwx------ 2 jbarb011 csmajs 4096 Apr 19 16:37 src
+drwx------ 2 jbarb011 csmajs 4096 Apr 19 20:13 tests
+jbarb011@hammer.cs.ucr.edu$ ls -l -a
+total 32
+drwx------ 6 jbarb011 csmajs 4096 Apr 19 20:12 .
+drwx------ 6 jbarb011 csmajs 4096 Apr 13 13:58 ..
+drwx------ 2 jbarb011 csmajs 4096 Apr 19 20:14 bin
+drwx------ 8 jbarb011 csmajs 4096 Apr 19 20:04 .git
+-rw------- 1 jbarb011 csmajs 1082 Apr 12 22:35 LICENSE
+-rw------- 1 jbarb011 csmajs  120 Apr 19 20:05 Makefile
+-rw------- 1 jbarb011 csmajs   25 Apr 12 22:35 README.md
+drwx------ 2 jbarb011 csmajs 4096 Apr 19 16:37 src
+drwx------ 2 jbarb011 csmajs 4096 Apr 19 20:13 tests
+jbarb011@hammer.cs.ucr.edu$ ls -l  a
+total 32
+drwx------ 6 jbarb011 csmajs 4096 Apr 19 20:12 .
+drwx------ 6 jbarb011 csmajs 4096 Apr 13 13:58 ..
+drwx------ 2 jbarb011 csmajs 4096 Apr 19 20:14 bin
+drwx------ 8 jbarb011 csmajs 4096 Apr 19 20:04 .git
+-rw------- 1 jbarb011 csmajs 1082 Apr 12 22:35 LICENSE
+-rw------- 1 jbarb011 csmajs  120 Apr 19 20:05 Makefile
+-rw------- 1 jbarb011 csmajs   25 Apr 12 22:35 README.md
+drwx------ 2 jbarb011 csmajs 4096 Apr 19 16:37 src
+drwx------ 2 jbarb011 csmajs 4096 Apr 19 20:13 tests
+jbarb011@hammer.cs.ucr.edu$ ls  clear
+[H[2Jjbarb011@hammer.cs.ucr.edu$ ls  ls
+bin  LICENSE  Makefile	README.md  src	tests
+jbarb011@hammer.cs.ucr.edu$ pwd
+/home/csmajs/jbarb011/CS100/rshell
+jbarb011@hammer.cs.ucr.edu$                               ls
+bin  LICENSE  Makefile	README.md  src	tests
+jbarb011@hammer.cs.ucr.edu$ bin/rshell
+jbarb011@hammer.cs.ucr.edu$ echo "test 2: exit"
+"test 2: exit"
+jbarb011@hammer.cs.ucr.edu$ exit
+jbarb011@hammer.cs.ucr.edu$ bin/r shell
+execvp: No such file or directory
+jbarb011@hammer.cs.ucr.edu$ bin/rshell
+jbarb011@hammer.cs.ucr.edu$ exit
+jbarb011@hammer.cs.ucr.edu$ exit
+~/CS100/rshell
+jbarb011@hammer $ binr/[K[K/rshell
+jbarb011@hammer.cs.ucr.edu$ askljdka
+execvp: No such file or directory
+jbarb011@hammer.cs.ucr.edu$ echo "test 3: bi  ; semicolon"
+"test 3: semicolon"
+jbarb011@hammer.cs.ucr.edu$ ls; ls; ls;
+bin  LICENSE  Makefile	README.md  src	tests
+bin  LICENSE  Makefile	README.md  src	tests
+bin  LICENSE  Makefile	README.md  src	tests
+jbarb011@hammer.cs.ucr.edu$ ls -a
+.  ..  bin  .git  LICENSE  Makefile  README.md	src  tests
+jbarb011@hammer.cs.ucr.edu$ ls; -a
+bin  LICENSE  Makefile	README.md  src	tests
+execvp: No such file or directory
+jbarb011@hammer.cs.ucr.edu$ ls; ls   -a;
+bin  LICENSE  Makefile	README.md  src	tests
+.  ..  bin  .git  LICENSE  Makefile  README.md	src  tests
+jbarb011@hammer.cs.ucr.edu$ ls    pwd  ; ls
+/home/csmajs/jbarb011/CS100/rshell
+bin  LICENSE  Makefile	README.md  src	tests
+jbarb011@hammer.cs.ucr.edu$ ls ls
+ls: cannot access ls: No such file or directory
+jbarb011@hammer.cs.ucr.edu$ echo "test 4: s mo  comments: "
+"test 4: comments"
+jbarb011@hammer.cs.ucr.edu$ ls #-a
+bin  LICENSE  Makefile	README.md  src	tests
+jbarb011@hammer.cs.ucr.edu$ ls              #hello
+bin  LICENSE  Makefile	README.md  src	tests
+jbarb011@hammer.cs.ucr.edu$ ls    #hello ls
+jbarb011@hammer.cs.ucr.edu$ ls ls  -a;     #ls  ; ls
+bin  LICENSE  Makefile	README.md  src	tests
+jbarb011@hammer.cs.ucr.edu$ clear
+[H[2Jjbarb011@hammer.cs.ucr.edu$ exit
+~/CS100/rshell
+jbarb011@hammer $ exit
+exit
+
+Script done on Sun 19 Apr 2015 08:23:22 PM PDT

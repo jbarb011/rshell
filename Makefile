@@ -6,8 +6,8 @@ bin:
 	mkdir bin;
 
 rshell:
-	src/rshell.cpp -Wall -Werror -ansi -pedantic -o bin/rshell
+	g++ rc/rshell.cpp -Wall -Werror -ansi -pedantic -o bin/rshell
 
 ls:
-	src/ls.cpp -Wall -Werror -ansi -pedantic -o bin/ls
+	g++ src/ls.cpp -Wall -Werror -ansi -pedantic -o bin/ls
 
