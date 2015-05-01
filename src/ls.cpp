@@ -1,17 +1,98 @@
 #include <iostream>
-#include <vector>
-#include <string.h>
+#include <sys/types.h>
+#include <sys/stat.h>
 #include <unistd.h>
 #include <dirent.h>
+#include <cstdlib>
+#include <stdio.h>
+#include <iomanip>
+#include <vector>
 #include <fcntl.h>
+#include <string.h>
 #include <pwd.h>
-
-
+#include <grp.h>
+#include <time.h>
+#include <errno.h>
 using namespace std;
 
 #define Flag_a 1
 #define Flag_l 2
 #define Flag_R 4
+
+void read_file(int Flag, string file_name){
+    /*bool l_flag = false;
+    if((Flag & Flag_l) == Flag_l){
+        l_flag = true;
+    }*/
+
+    const char* file = file_name.c_str();
+    struct stat statbuf;
+    //bool isdir = false, isex = false, ishidden = false;
+
+    if(-1 == stat(file,&statbuf)){
+        perror("stat");
+        exit(1);
+    }
+
+    /*if(file_name.at(0) == '.'){
+        ishidden = true;
+    }*/
+
+    if(S_ISDIR(statbuf.st_mode)){
+        cout << "d";
+        //isdir = true;
+    } else cout << "-";
+
+    if (statbuf.st_mode & S_IRUSR) {
+    cout << "r";
+    } else cout << "-";
+    if (statbuf.st_mode & S_IWUSR) {
+    cout << "w";
+    } else cout << "-";
+    if (statbuf.st_mode & S_IXUSR) {
+    cout << "x";
+    //isex = true;
+    } else cout << "-";
+    
+    if (statbuf.st_mode & S_IRGRP) {
+    cout << "r";
+    } else cout << "-";
+    if (statbuf.st_mode & S_IWGRP) {
+    cout << "w";
+    } else cout << "-";
+    if (statbuf.st_mode & S_IXGRP) {
+    cout << "x";
+    //isex = true;
+    } else cout << "-";
+
+    if (statbuf.st_mode & S_IROTH) {
+    cout << "r";
+    } else cout << "-";
+    if (statbuf.st_mode & S_IWOTH) {
+    cout << "w";
+    } else cout << "-";
+    if (statbuf.st_mode & S_IXOTH) {
+    cout << "x";
+    //isex = true;
+    } else cout << "-";
+
+    struct passwd *password;
+    struct group *grp;
+    password = getpwuid(statbuf.st_uid);
+    grp = getgrgid(statbuf.st_gid);
+
+    cout << " " << statbuf.st_nlink << " ";
+    cout << password->pw_name << " " << grp->gr_name << " ";
+    cout << statbuf.st_size << " ";
+
+    struct tm *curr_time;
+    char time_buffer[80];
+    curr_time = localtime(&statbuf.st_atime);
+    strftime(time_buffer, 80, "%b %d %R", curr_time);
+    cout << time_buffer << " ";
+
+    cout << file_name << endl;
+}
 
 void read_from(int Flag, string directory_name){
     DIR *DIRp;
@@ -31,9 +112,34 @@ void read_from(int Flag, string directory_name){
     if((Flag & Flag_a) == Flag_a){
         a_flag = true;
     }
-    // left off here
+    
+    while((rddir = readdir(DIRp))){
+        int err = errno;
+        if(err != 0){
+            perror("readdir");
+            exit(1);
+        }
 
+        if(a_flag || rddir->d_name[0] != '.'){
+            file_names.push_back(rddir->d_name);
+        }
 
+    }
+
+    for(unsigned i = 0; i < file_names.size(); i++){
+        for(unsigned j = 0; j < file_names.size(); j++){
+            if(strcmp(file_names.at(i),file_names.at(j)) < 0){
+                char* bop = file_names.at(i);
+                file_names.at(i) = file_names.at(j);
+                file_names.at(j) = bop;
+            }
+        }
+    }
+    
+    for(unsigned i = 0; i < file_names.size(); i++){
+        string fil = file_names.at(i);
+        read_file(Flag, fil);
+    }
 }
 
 int main(int argc, char** argv){
@@ -43,7 +149,7 @@ int main(int argc, char** argv){
     vector<bool> do_directory;    //true = do a directory, false = do a file
     bool docurrdirect = true;
 
-    for(unsigned x = 1; x < argc; x++){
+    for(int x = 1; x < argc; x++){
         if(argv[x][0] == '-'){
             for(unsigned y = 1; argv[x][y] != 0; y++){
                 if(argv[x][y] == 'a'){
