@@ -1,0 +1,144 @@
+Script started on Fri 01 May 2015 08:22:27 PM PDT
+~
+jbarb011@hammer $ ls
+[0m[01;32mcipher.cpp[0m*  [01;34mCS061[0m/  [01;34mCS100[0m/  [01;34mDesktop[0m/  [01;34mrandfiles[0m/  test  test2  test.cpp  [01;34mycaoo2pt2[0m/
+[m~
+jbarb011@hammer $ cd CS100
+~/CS100
+jbarb011@hammer $ cd rshell
+~/CS100/rshell
+jbarb011@hammer $ ls
+[0m[01;34mbin[0m/  hw1test  LICENSE  Makefile  README.md  [01;34msrc[0m/  [01;34mtests[0m/
+[m~/CS100/rshell
+jbarb011@hammer $ bin/ls[K[Krh[Kshell
+jbarb011@hammer.cs.ucr.edu$ bin/ls
+LICENSE[0;39m   Makefile[0;39m  README.md[0;39m    [1;32m[1;34mbin[0;39m    hw1test[0;39m    [1;32m[1;34msrc[0;39m    [1;32m[1;34mtests[0;39m
+jbarb011@hammer.cs.ucr.edu$ bin               bin/ls
+LICENSE[0;39m   Makefile[0;39m  README.md[0;39m    [1;32m[1;34mbin[0;39m    hw1test[0;39m    [1;32m[1;34msrc[0;39m    [1;32m[1;34mtests[0;39m
+jbarb011@hammer.cs.ucr.edu$ bin/ls -a
+[1;32m[1;34m[1;47m.[0;39m    [1;32m[1;34m[1;47m..[0;39m    [1;32m[1;34m[1;47m.git[0;39m    LICENSE[0;39m   Makefile[0;39m  README.md[0;39m    [1;32m[1;34mbin[0;39m    hw1test[0;39m    [1;32m[1;34msrc[0;39m    [1;32m[1;34mtests[0;39m
+jbarb011@hammer.cs.ucr.edu$ bin/ls -al
+total 36
+drwx------ 6 jbarb011 csmajs 4096 May 01 20:16[1;32m[1;34m [1;47m.[0;39m
+do_ypcall: clnt_call: RPC: Unable to send; errno = Operation not permitted
+drwx------ 9 jbarb011 csmajs 4096 May 01 14:36[1;32m[1;34m [1;47m..[0;39m
+drwx------ 8 jbarb011 csmajs 4096 May 01 06:07[1;32m[1;34m [1;47m.git[0;39m
+-rw------- 1 jbarb011 csmajs 1082 Apr 23 07:14 LICENSE[0;39m
+-rw------- 1 jbarb011 csmajs  250 May 01 18:40 Makefile[0;39m
+-rw------- 1 jbarb011 csmajs  600 May 01 20:15 README.md[0;39m
+drwx------ 2 jbarb011 csmajs 4096 May 01 20:13[1;32m[1;34m bin[0;39m
+-rw------- 1 jbarb011 csmajs    0 May 01 20:16 hw1test[0;39m
+drwx------ 2 jbarb011 csmajs 4096 May 01 20:13[1;32m[1;34m src[0;39m
+drwx------ 2 jbarb011 csmajs 4096 May 01 20:13[1;32m[1;34m tests[0;39m
+jbarb011@hammer.cs.ucr.edu$ bin/ls -la
+total 36
+drwx------ 6 jbarb011 csmajs 4096 May 01 20:16[1;32m[1;34m [1;47m.[0;39m
+drwx------ 9 jbarb011 csmajs 4096 May 01 14:36[1;32m[1;34m [1;47m..[0;39m
+drwx------ 8 jbarb011 csmajs 4096 May 01 06:07[1;32m[1;34m [1;47m.git[0;39m
+-rw------- 1 jbarb011 csmajs 1082 Apr 23 07:14 LICENSE[0;39m
+-rw------- 1 jbarb011 csmajs  250 May 01 18:40 Makefile[0;39m
+-rw------- 1 jbarb011 csmajs  600 May 01 20:15 README.md[0;39m
+drwx------ 2 jbarb011 csmajs 4096 May 01 20:13[1;32m[1;34m bin[0;39m
+-rw------- 1 jbarb011 csmajs    0 May 01 20:16 hw1test[0;39m
+drwx------ 2 jbarb011 csmajs 4096 May 01 20:13[1;32m[1;34m src[0;39m
+drwx------ 2 jbarb011 csmajs 4096 May 01 20:13[1;32m[1;34m tests[0;39m
+jbarb011@hammer.cs.ucr.edu$ bin/ls                            -la
+total 36
+drwx------ 6 jbarb011 csmajs 4096 May 01 20:16[1;32m[1;34m [1;47m.[0;39m
+drwx------ 9 jbarb011 csmajs 4096 May 01 14:36[1;32m[1;34m [1;47m..[0;39m
+drwx------ 8 jbarb011 csmajs 4096 May 01 06:07[1;32m[1;34m [1;47m.git[0;39m
+-rw------- 1 jbarb011 csmajs 1082 Apr 23 07:14 LICENSE[0;39m
+-rw------- 1 jbarb011 csmajs  250 May 01 18:40 Makefile[0;39m
+-rw------- 1 jbarb011 csmajs  600 May 01 20:15 README.md[0;39m
+drwx------ 2 jbarb011 csmajs 4096 May 01 20:13[1;32m[1;34m bin[0;39m
+-rw------- 1 jbarb011 csmajs    0 May 01 20:16 hw1test[0;39m
+drwx------ 2 jbarb011 csmajs 4096 May 01 20:13[1;32m[1;34m src[0;39m
+drwx------ 2 jbarb011 csmajs 4096 May 01 20:13[1;32m[1;34m tests[0;39m
+jbarb011@hammer.cs.ucr.edu$ bin/ls --a
+[1;32m[1;34m[1;47m.[0;39m    [1;32m[1;34m[1;47m..[0;39m    [1;32m[1;34m[1;47m.git[0;39m    LICENSE[0;39m   Makefile[0;39m  README.md[0;39m    [1;32m[1;34mbin[0;39m    hw1test[0;39m    [1;32m[1;34msrc[0;39m    [1;32m[1;34mtests[0;39m
+jbarb011@hammer.cs.ucr.edu$ bin/ls      ls --a
+ls: option '--a' is ambiguous
+Try `ls --help' for more information.
+jbarb011@hammer.cs.ucr.edu$ bin/ls -aaal
+total 36
+drwx------ 6 jbarb011 csmajs 4096 May 01 20:16[1;32m[1;34m [1;47m.[0;39m
+drwx------ 9 jbarb011 csmajs 4096 May 01 14:36[1;32m[1;34m [1;47m..[0;39m
+drwx------ 8 jbarb011 csmajs 4096 May 01 06:07[1;32m[1;34m [1;47m.git[0;39m
+-rw------- 1 jbarb011 csmajs 1082 Apr 23 07:14 LICENSE[0;39m
+-rw------- 1 jbarb011 csmajs  250 May 01 18:40 Makefile[0;39m
+-rw------- 1 jbarb011 csmajs  600 May 01 20:15 README.md[0;39m
+drwx------ 2 jbarb011 csmajs 4096 May 01 20:13[1;32m[1;34m bin[0;39m
+-rw------- 1 jbarb011 csmajs    0 May 01 20:16 hw1test[0;39m
+drwx------ 2 jbarb011 csmajs 4096 May 01 20:13[1;32m[1;34m src[0;39m
+drwx------ 2 jbarb011 csmajs 4096 May 01 20:13[1;32m[1;34m tests[0;39m
+jbarb011@hammer.cs.ucr.edu$ ls -aaa
+.  ..  bin  .git  hw1test  LICENSE  Makefile  README.md  src  tests
+do_ypcall: clnt_call: RPC: Unable to send; errno = Operation not permitted
+jbarb011@hammer.cs.ucr.edu$ bin/ls README.md
+README.md[0;39m
+jbarb011@hammer.cs.ucr.edu$ bin/ls README.md -l
+-rw------- 1 jbarb011 csmajs  600 May 01 20:15 README.md[0;39m
+jbarb011@hammer.cs.ucr.edu$ bin/ls .  . -la
+total 44
+drwx------ 9 jbarb011 csmajs 4096 May 01 14:36[1;32m[1;34m [1;47m.[0;39m
+drwx------ 35 jbarb011 csmajs 8192 May 01 20:16[1;32m[1;34m [1;47m..[0;39m
+drwx------ 3 jbarb011 csmajs 4096 Apr 30 10:47[1;32m[1;34m firstrepo[0;39m
+-rw------- 1 jbarb011 csmajs  180 Apr 23 07:14 hold[0;39m
+drwx------ 2 jbarb011 csmajs 4096 Apr 30 10:47[1;32m[1;34m labs[0;39m
+drwx------ 6 jbarb011 csmajs 4096 May 01 20:16[1;32m[1;34m rshell[0;39m
+drwx------ 4 jbarb011 csmajs 4096 Apr 30 10:48[1;32m[1;34m test[0;39m
+drwx------ 9 jbarb011 csmajs 4096 Apr 30 10:48[1;32m[1;34m ucr-cs100[0;39m
+drwx------ 6 jbarb011 csmajs 4096 May 01 14:38[1;32m[1;34m ycao[0;39m
+drwx------ 6 jbarb011 csmajs 4096 Apr 30 10:48[1;32m[1;34m ycao006[0;39m
+jbarb011@hammer.cs.ucr.edu$ bin/ls -la                     ..
+total 44
+drwx------ 9 jbarb011 csmajs 4096 May 01 14:36[1;32m[1;34m [1;47m.[0;39m
+drwx------ 35 jbarb011 csmajs 8192 May 01 20:16[1;32m[1;34m [1;47m..[0;39m
+drwx------ 3 jbarb011 csmajs 4096 Apr 30 10:47[1;32m[1;34m firstrepo[0;39m
+-rw------- 1 jbarb011 csmajs  180 Apr 23 07:14 hold[0;39m
+drwx------ 2 jbarb011 csmajs 4096 Apr 30 10:47[1;32m[1;34m labs[0;39m
+drwx------ 6 jbarb011 csmajs 4096 May 01 20:16[1;32m[1;34m rshell[0;39m
+drwx------ 4 jbarb011 csmajs 4096 Apr 30 10:48[1;32m[1;34m test[0;39m
+do_ypcall: clnt_call: RPC: Unable to send; errno = Operation not permitted
+do_ypcall: clnt_call: RPC: Unable to send; errno = Operation not permitted
+jbarb011@hammer.cs.ucr.edu$ bin/ls -                        -la ..
+total 44
+drwx------ 9 jbarb011 csmajs 4096 May 01 14:36[1;32m[1;34m [1;47m.[0;39m
+drwx------ 35 jbarb011 csmajs 8192 May 01 20:16[1;32m[1;34m [1;47m..[0;39m
+drwx------ 3 jbarb011 csmajs 4096 Apr 30 10:47[1;32m[1;34m firstrepo[0;39m
+-rw------- 1 jbarb011 csmajs  180 Apr 23 07:14 hold[0;39m
+do_ypcall: clnt_call: RPC: Unable to send; errno = Operation not permitted
+drwx------ 2 jbarb011 csmajs 4096 Apr 30 10:47[1;32m[1;34m labs[0;39m
+drwx------ 6 jbarb011 csmajs 4096 May 01 20:16[1;32m[1;34m rshell[0;39m
+drwx------ 4 jbarb011 csmajs 4096 Apr 30 10:48[1;32m[1;34m test[0;39m
+drwx------ 9 jbarb011 csmajs 4096 Apr 30 10:48[1;32m[1;34m ucr-cs100[0;39m
+do_ypcall: clnt_call: RPC: Unable to send; errno = Operation not permitted
+drwx------ 6 jbarb011 csmajs 4096 May 01 14:38[1;32m[1;34m ycao[0;39m
+do_ypcall: clnt_call: RPC: Unable to send; errno = Operation not permitted
+drwx------ 6 jbarb011 csmajs 4096 Apr 30 10:48[1;32m[1;34m ycao006[0;39m
+do_ypcall: clnt_call: RPC: Unable to send; errno = Operation not permitted
+jbarb011@hammer.cs.ucr.edu$ bin/ls src
+checksyscalls.sh[0;39m     ls.cpp[0;39m  shell.cpp[0;39m
+jbarb011@hammer.cs.ucr.edu$ bin/ls bin
+[1;32mls[0;39m    [1;32mrshell[0;39m
+jbarb011@hammer.cs.ucr.edu$ bin/ls Makefile READMK E.md
+Makefile[0;39m  README.md[0;39m
+jbarb011@hammer.cs.ucr.edu$ bin/ls Makefile README.d md L src
+Makefile[0;39m  README.md[0;39mchecksyscalls.sh[0;39m     ls.cpp[0;39m  shell.cpp[0;39m
+jbarb011@hammer.cs.ucr.edu$ bin/ls -la  R
+LICENSE[0;39m   Makefile[0;39m  README.md[0;39m    [1;32m[1;34mbin[0;39m    hw1test[0;39m    [1;32m[1;34msrc[0;39m    [1;32m[1;34mtests[0;39m
+jbarb011@hammer.cs.ucr.edu$ bin/ls  
+LICENSE[0;39m   Makefile[0;39m  README.md[0;39m    [1;32m[1;34mbin[0;39m    hw1test[0;39m    [1;32m[1;34msrc[0;39m    [1;32m[1;34mtests[0;39m
+jbarb011@hammer.cs.ucr.edu$ bin/ls . -a .././../sr  ./src
+stat1: No such file or directory
+jbarb011@hammer.cs.ucr.edu$ bin/ls .././src     CS  rshell/src
+checksyscalls.sh[0;39m     ls.cpp[0;39m  shell.cpp[0;39m
+jbarb011@hammer.cs.ucr.edu$ cd  exit
+~/CS100/rshell
+jbarb011@hammer $ ls
+[0m[01;34mbin[0m/  hw1test  LICENSE  Makefile  README.md  [01;34msrc[0m/  [01;34mtests[0m/
+[m~/CS100/rshell
+jbarb011@hammer $ ls src[K[K[K[K[K[Kexit
+exit
+
+Script done on Fri 01 May 2015 08:27:04 PM PDT

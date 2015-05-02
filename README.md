@@ -15,3 +15,11 @@ It is a recreation of linux's bash terminal, where you should be able to read, w
 4. If '#' is inside a word it will not count the comment.
 
 5. If exit is not first parameter it will not exit program.
+
+## hw1 bugs:
+
+1. Could not get -R to work
+
+2. --a works
+
+3. a ls with both a file and folder will look weird
