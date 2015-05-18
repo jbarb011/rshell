@@ -87,15 +87,17 @@ int main()
                     }
 
                     else if(stringtoken2.at(i) == '>'){
-                        if(stringtoken2.size() > 1 && stringtoken2.size() - i > 1 && (do_append||do_out))
+                        if(stringtoken2.size() > 1 && !(do_append||do_out))
                         {
-                            if(stringtoken2.at(i+1) == '>')
-                            {
-                                do_append = true;
+                            if(stringtoken2.size() - 1 > i){
+                                if(stringtoken2.at(i+1) == '>')
+                                {
+                                    do_append = true;
+                                }
                             }
                             if(i > 0)
                             {
-                                if(token2[i-1] > 47 && token2[i-1] < 58)
+                                if(token2[i-1] >= '0' && token2[i-1] <= '9')
                                 {
                                     out_file = token2[i-1] - 48;
                                 }

@@ -27,7 +27,7 @@ int main(int argc, char** argv){
     }
     struct stat sb;
     if(!(stat(argv[2], &sb)==-1)){
-        cout << "file already exists" << endl;
+        perror("stat");
         exit(1);
     }
 
