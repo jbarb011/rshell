@@ -39,7 +39,7 @@ int main()
 
     while(run)
     {
-
+        bool changedir = false;
         //extra credit part
         char* username;
         char hostname[128];
@@ -99,7 +99,16 @@ int main()
                     token2 = NULL;
                     commandvector.clear();
                 }
-
+                
+                if(stringtoken2 == "cd" && y == 0)
+                {
+                    token2 = strtok(NULL, " ");
+                    if(-1 == chdir(token2))
+                    {
+                        perror("chdir");
+                    }
+                    changedir = true;
+                }
                 for(unsigned i = 0; i < stringtoken2.size(); i++)
                 {
                     if(stringtoken2.at(i) == '<')
@@ -179,6 +188,10 @@ int main()
 
             argv[y] = new char[5];
             argv[y] = NULL;
+
+            if(changedir){
+                continue;
+            }
 
             int pid = fork();
             if(pid == -1){
