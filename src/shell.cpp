@@ -12,9 +12,30 @@
 
 using namespace std;
 
+bool inside = false;
+
+void handler(int signum)
+{
+    if(signum == SIGINT){
+        if(SIG_ERR == (signal(SIGINT, handler))){
+            perror("signal");
+            exit(1);
+        }
+        if(inside){
+            exit(1);
+        }
+    }
+    return;
+}
+
 int main()
 {
     bool run= true;
+
+    if(SIG_ERR == (signal(SIGINT, handler))){
+        perror("signal");
+        exit(1);
+    }
 
     while(run)
     {
@@ -155,6 +176,7 @@ int main()
 
             }
             
+
             argv[y] = new char[5];
             argv[y] = NULL;
 
@@ -207,6 +229,7 @@ int main()
                         exit(1);
                     }
                 }
+                inside = true;
                 int execvperror = execvp(argv[0], argv);
                 if(execvperror == -1){
                     perror("execvp");
