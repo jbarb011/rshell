@@ -9,6 +9,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <pwd.h>
 
 using namespace std;
 
@@ -36,13 +37,18 @@ int main()
         perror("signal");
         exit(1);
     }
-
+    char* char_dir = get_current_dir_name();
+    string curr_dir = char_dir;
+    string prev_dir = curr_dir;
     while(run)
     {
         bool changedir = false;
         //extra credit part
         char* username;
         char hostname[128];
+        char_dir = get_current_dir_name();
+        prev_dir = curr_dir;
+        curr_dir = char_dir;
         username = getlogin();
         if(NULL == username)
         {
@@ -54,7 +60,7 @@ int main()
             perror("gethostname");
             exit(1);
         }
-        cerr << username << "@" << hostname << "$ ";
+        cerr << username << "@" << hostname << ":~" << curr_dir << " $ ";
         
         //get command
         vector<char*> commandvector;
@@ -103,9 +109,27 @@ int main()
                 if(stringtoken2 == "cd" && y == 0)
                 {
                     token2 = strtok(NULL, " ");
-                    if(-1 == chdir(token2))
+                    char dash[] = "-";
+                    if(token2 == NULL){
+                        struct passwd *pw = getpwuid(getuid());
+                        if(-1 == chdir(pw->pw_dir)){
+                            perror("homedir");
+                            exit(1);
+                        }
+
+                    }
+                    else if(strcmp(dash, token2) == 0)
+                    {
+                        if(-1 == chdir(prev_dir.c_str()))
+                        {
+                            perror("prev_dir");
+                            exit(1);
+                        }
+                    }
+                    else if(-1 == chdir(token2))
                     {
                         perror("chdir");
+                        exit(1);
                     }
                     changedir = true;
                 }
