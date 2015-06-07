@@ -40,6 +40,7 @@ int main()
     char* char_dir = get_current_dir_name();
     string curr_dir = char_dir;
     string prev_dir = curr_dir;
+    free(char_dir);
     while(run)
     {
         bool changedir = false;
@@ -49,6 +50,7 @@ int main()
         char_dir = get_current_dir_name();
         prev_dir = curr_dir;
         curr_dir = char_dir;
+        free(char_dir);
         username = getlogin();
         if(NULL == username)
         {
@@ -89,8 +91,7 @@ int main()
             bool do_in = false, do_out = false, do_append = false;
             int out_file = 1;
 
-            char** argv;
-            argv = (char**) malloc (400);
+            char** argv = new char*[400];
             char* token2 = strtok(commandvector.at(x), " ");
             int y = 0;
             bool iscomment = false;
@@ -98,6 +99,8 @@ int main()
             {
                 string stringtoken2 = token2;
                 if(stringtoken2 == "exit"){
+                    delete [] argv;
+                    delete [] fullcommand;
                     return 0;
                 }
                 if(stringtoken2.at(0) == '#'){
@@ -166,7 +169,6 @@ int main()
 
                 }
                 if(!(iscomment|do_in|do_out|do_append)){
-                    argv[y] = new char[stringtoken2.size()];
                     argv[y] = token2;
                     token2 = strtok(NULL, " ");
                 }
@@ -210,7 +212,6 @@ int main()
             }
             
 
-            argv[y] = new char[5];
             argv[y] = NULL;
 
             if(changedir){
@@ -282,6 +283,8 @@ int main()
                     exit(1);
                 }
             }
+            delete [] argv;
+            delete [] fullcommand;
 
         }
 
