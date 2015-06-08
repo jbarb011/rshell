@@ -25,7 +25,7 @@ void handler(int signum)
         if(inside){
             exit(1);
         }
-    }
+    }   
     return;
 }
 
@@ -284,9 +284,10 @@ int main()
                 }
             }
             delete [] argv;
-            delete [] fullcommand;
 
         }
+
+	delete [] fullcommand;
 
     }
 
