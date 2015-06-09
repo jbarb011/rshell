@@ -114,8 +114,8 @@ int main()
                     token2 = strtok(NULL, " ");
                     char dash[] = "-";
                     if(token2 == NULL){
-                        struct passwd *pw = getpwuid(getuid());
-                        if(-1 == chdir(pw->pw_dir)){
+                        char* bleh = getenv("HOME");
+                        if(-1 == chdir(bleh)){
                             perror("homedir");
                             exit(1);
                         }
