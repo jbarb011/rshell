@@ -88,7 +88,7 @@ int main()
             //ints and bools for redirection
             int new_in = -2, new_out = -2, new_append = -2;
             bool do_in = false, do_out = false, do_append = false;
-            int out_file = 1;
+            //int out_file = 1;
 
             char** argv = new char*[400];
             char* token2 = strtok(commandvector.at(x), " ");
@@ -151,13 +151,13 @@ int main()
                                     do_append = true;
                                 }
                             }
-                            if(i > 0)
-                            {
-                                if(token2[i-1] >= '0' && token2[i-1] <= '9')
-                                {
-                                    out_file = token2[i-1] - 48;
-                                }
-                            }
+                            //if(i > 0)
+                            //{
+                            //    if(token2[i-1] >= '0' && token2[i-1] <= '9')
+                            //    {
+                            //        out_file = token2[i-1] - 48;
+                            //    }
+                            //}
                         }
 
                         if(!(do_append))
@@ -210,7 +210,7 @@ int main()
 
             }
             
-
+            cerr << new_out << endl;
             argv[y] = NULL;
 
             if(changedir){
@@ -222,7 +222,7 @@ int main()
                 perror("fork");
                 exit(1);
             }
-            if(pid == 0)
+            else if(pid == 0)
             {   
                 if(new_in != -2){
                     if(-1 == dup2(new_in,0)){
@@ -231,13 +231,13 @@ int main()
                     }
                 }
                 if(new_out != -2){
-                    if(-1 == dup2(new_out,out_file)){
-                    perror("dup new_out");
-                    exit(1);
+                    if(-1 == dup2(new_out,1)){
+                    	perror("dup new_out");
+                    	exit(1);
                     }
                 }
                 if(new_append != -2){
-                    if(-1 == dup2(new_append,out_file)){
+                    if(-1 == dup2(new_append,1)){
                         perror("dup new_append");
                         exit(1);
                     }
@@ -256,6 +256,24 @@ int main()
                 {
                     perror("wait");
                     exit(1);
+                }
+		if(new_in != -2){
+                    if(-1 == close(new_in)){
+                        perror("dup new_in");
+                        exit(1);
+                    }
+                }
+                if(new_out != -2){
+                    if(-1 == close(new_out)){
+                    	perror("dup new_out");
+                    	exit(1);
+                    }
+                }
+                if(new_append != -2){
+                    if(-1 == close(new_append)){
+                        perror("dup new_append");
+                        exit(1);
+                    }
                 }
             }
             delete [] argv;
