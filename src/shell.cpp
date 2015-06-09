@@ -38,6 +38,12 @@ int main()
         exit(1);
     }
     char* char_dir = get_current_dir_name();
+    if(NULL == char_dir)
+    {
+    	perror("getlogin");
+    	exit(1);
+    }
+
     string curr_dir = char_dir;
     string prev_dir = curr_dir;
     free(char_dir);
@@ -48,6 +54,11 @@ int main()
         char* username;
         char hostname[128];
         char_dir = get_current_dir_name();
+         if(NULL == char_dir)
+    	{
+    		perror("getlogin");
+    		exit(1);
+    	}
         prev_dir = curr_dir;
         curr_dir = char_dir;
         free(char_dir);
