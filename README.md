@@ -39,3 +39,7 @@ It is a recreation of linux's bash terminal, where you should be able to read, w
 1. Could not get piping to work
 
 2. Redirection for some reason does not work until the second attempt at running. It is not like this on desktop and only on hammer. It will first give you a "cannot access" error and then a "execvp: bad address" error.
+
+## hw3 bugs
+1. Going back and forth between current and previous directory will cause the directories to be out of sync.
+2. Sometimes will not bring you to the right home directory.
