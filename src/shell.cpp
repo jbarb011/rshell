@@ -62,7 +62,7 @@ int main()
             perror("gethostname");
             exit(1);
         }
-        cerr << username << "@" << hostname << ":~" << curr_dir << " $ ";
+        cerr << username << "@" << hostname << ":" << curr_dir << " $ ";
         
         //get command
         vector<char*> commandvector;
@@ -215,6 +215,7 @@ int main()
             argv[y] = NULL;
 
             if(changedir){
+		delete [] argv;
                 continue;
             }
 
