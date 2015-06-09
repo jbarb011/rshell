@@ -1,20 +1,26 @@
 Script started on Fri 29 May 2015 10:02:14 PM PDT
-~
+~
+
 jbarb011@hammer $ ls
 [0m[01;32mcipher.cpp[0m*  [01;34mCS100[0m/    [01;34mrandfiles[0m/  test2     tests
 [01;34mCS061[0m/       [01;34mDesktop[0m/  test        test.cpp  [01;34mycaoo2pt2[0m/
-[m~
+[m~
+
 jbarb011@hammer $ cd CS100
-~/CS100
+~/CS100
+
 jbarb011@hammer $ LS[K[Kls
 [0m[01;34mdumb[0m/       hold   [01;34mrshell[0m/  [01;34mtest[0m/     [01;34mttruo018[0m/   [01;34mycao[0m/
 [01;34mfirstrepo[0m/  [01;34mlabs[0m/  [01;34mshell[0m/   [01;34mtesting[0m/  [01;34mucr-cs100[0m/  [01;34mycao006[0m/
-[m~/CS100
+[m~/CS100
+
 jbarb011@hammer $ cd shell
-~/CS100/shell
+~/CS100/shell
+
 jbarb011@hammer $ ls
 [0m[01;34mbin[0m/  hw3test  LICENSE  Makefile  README.md  [01;34msrc[0m/  [01;34mtests[0m/
-[m~/CS100/shell
+[m~/CS100/shell
+
 jbarb011@hammer $ make
 make: Circular bin <- bin dependency dropped.
 g++ src/shell.cpp -Wall -Werror -ansi -pedantic -o bin/rshell
@@ -22,7 +28,8 @@ g++ src/ls.cpp -Wall -Werror -ansi -pedantic -o bin/ls
 g++ src/cp.cpp -Wall -Werror -ansi -pedantic -o bin/cp
 g++ src/rm.cpp -Wall -Werror -ansi -pedantic -o bin/rm
 g++ src/mv.cpp -Wall -Werror -ansi -pedantic -o bin/mv
-~/CS100/shell
+~/CS100/shell
+
 jbarb011@hammer $ bin/rshell[K[Kll
 jbarb011@hammer.cs.ucr.edu:~/home/csmajs/jbarb011/CS100/shell $ ^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^C^Ccat
 ^Cjbarb011@hammer.cs.ucr.edu:~/home/csmajs/jbarb011/CS100/shell $ cd src
@@ -32,11 +39,13 @@ jbarb011@hammer.cs.ucr.edu:~/home/csmajs/jbarb011 $ cd =-  -
 jbarb011@hammer.cs.ucr.edu:~/home/csmajs/jbarb011/CS100/shell $ cd                               ..
 jbarb011@hammer.cs.ucr.edu:~/home/csmajs/jbarb011/CS100 $ cd  cd                                                                                    -
 jbarb011@hammer.cs.ucr.edu:~/home/csmajs/jbarb011/CS100/shell $ exit
-~/CS100/shell
+~/CS100/shell
+
 jbarb011@hammer $ ls[K[Kcd[K[Kbin/rshell
 jbarb011@hammer.cs.ucr.edu:~/home/csmajs/jbarb011/CS100/shell $ cd -
 jbarb011@hammer.cs.ucr.edu:~/home/csmajs/jbarb011/CS100/shell $ exit
-~/CS100/shell
+~/CS100/shell
+
 jbarb011@hammer $ exit
 exit
 
